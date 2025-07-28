@@ -4,12 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiAPP3BIMESTRE"
+    xmlns:Views="clr-namespace:MauiAPP3BIMESTRE.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiAPP3BIMESTRE">
 
-    <ShellContent
+    <TabBar>
+        <tab Title="Nova Atividade" icon="exercicio.png" Route="CadastroAividade" >
+
+            <ShellContent>
+            <Views: CadastroAtividade Title="Cadastro de Atividade"/>
+            </ShellContent>
+        </tab>
+        <Tab Title="Minhas Atividadesa" icon="meus_exercicios.png" Route=MinhasAtividade" >
+            <ShellContent>
+                <Views: ListaAtividades Title="Minhas Atividades"/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Sobre" Icon="sobre.png">
+            <ShellContent>
+                <Views: Sobre Title="Sobre o App"/>
+            </ShellContent>
+        </Tab>
+
+
+    </TabBar>
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"
+        </ShellContent>
+
+
 
 </Shell>
