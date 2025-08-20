@@ -136,6 +136,20 @@ namespace MauiAPP3BIMESTRE.ViewModel
          }
         public ICommand VerAtividade 
         {
+            get => new Command<int>(async(int id)=>
+            {
+                try 
+                {
+                    Atividade model = await App.Database.GetById(id);
+                    this.Id = Model.Id;
+                    this.Descricao = Model.Descricao;
+                    this.Peso = Model.Peso;
+                    this.Data = Model.Data;
+                    this.Observacoes = Model.Observacoes;
+                }catch (Exception ex)
+                {
+                    {  await Shell.Current.DisplayAlert("Ops!", ex.Message, "OK"); };
+            });
         }
     }
 
