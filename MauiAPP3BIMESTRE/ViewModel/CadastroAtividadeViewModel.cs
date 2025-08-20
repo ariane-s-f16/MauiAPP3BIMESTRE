@@ -141,14 +141,14 @@ namespace MauiAPP3BIMESTRE.ViewModel
                 try 
                 {
                     Atividade model = await App.Database.GetById(id);
-                    this.Id = Model.Id;
-                    this.Descricao = Model.Descricao;
-                    this.Peso = Model.Peso;
-                    this.Data = Model.Data;
-                    this.Observacoes = Model.Observacoes;
+                    this.Id = model.Id;
+                    this.Descricao = model.Descricao;
+                    this.Peso = model.Peso;
+                    this.Data = model.Data;
+                    this.Observacoes = model.Observacoes;
                 }catch (Exception ex)
                 {
-                    {  await Shell.Current.DisplayAlert("Ops!", ex.Message, "OK"); };
+                     await Shell.Current.DisplayAlert("Ops!", ex.Message, "OK");
             });
         }
     }
